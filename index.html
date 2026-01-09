@@ -385,56 +385,128 @@
           color: white;
         }
         
-        /* 团队成员部分 */
-          .team {
-            background-color: white;
-          }
-        
-        .team-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 30px;
-        }
-        
-        .team-member {
-          text-align: center;
-          background-color: var(--light);
-          border-radius: 10px;
-          padding: 30px 20px;
-          transition: all 0.3s;
-        }
-        
-        .team-member:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .member-photo {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin: 0 auto 20px;
-          border: 5px solid var(--secondary);
-        }
-        
-        .member-name {
-          font-size: 20px;
-          margin-bottom: 5px;
-          color: var(--primary);
-        }
-        
-        .member-role {
-          color: var(--secondary);
-          font-weight: 600;
-          margin-bottom: 15px;
-        }
-        
-        .member-bio {
-          color: #666;
-            font-size: 14px;
-          line-height: 1.5;
-        }
+    <style>
+/* 团队部分基础样式 */
+.team {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+/* 网格布局确保卡片对齐 */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 卡片统一样式 */
+.team-member {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* 卡片悬停效果 */
+.team-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 成员头像样式 */
+.member-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e9ecef;
+  margin-bottom: 20px;
+}
+
+/* 成员名字样式 - 统一链接样式 */
+.member-name {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.member-name a {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.member-name a:hover {
+  color: #c74385;
+  text-decoration: underline;
+}
+
+/* 成员角色样式 */
+.member-role {
+  color: #c74385;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* 成员简介样式 */
+.member-bio {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .team-member {
+    padding: 20px;
+  }
+  
+  .member-photo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .member-name {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}
+</style>
         
         /* 页脚 */
           footer {
@@ -999,73 +1071,84 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
           
-         <!-- 团队成员部分 -->
+ <!-- 团队成员部分 -->
 <section id="team" class="team">
   <div class="container">
     <h2 class="section-title">Team members</h2>
     <div class="team-grid">
+      <!-- 原有栾合密卡片保持不变 -->
       <div class="team-member">
         <img src="https://teacher.gdut.edu.cn/_resources/group1/M00/00/0B/rB8AEGQKv-eAdnj1AAIakD0StqY347.png?randomid=1762741252970" alt="栾合密" class="member-photo">
-          <h3 class="member-name">
-            <a href="https://teacher.gdut.edu.cn/luanhemi/zh_CN/index/229115/list/index.htm" target="_blank">Hemi Luan</a>
+        <h3 class="member-name">
+          <a href="https://teacher.gdut.edu.cn/luanhemi/zh_CN/index/229115/list/index.htm" target="_blank">Hemi Luan</a>
         </h3>
         <p class="member-role">Professor</p>
         <p class="member-bio">Professor Luan is a "Hundred Talents Program" distinguished professor of Guangdong University of Technology.</p>
-    
       </div>
+      
+      <!-- 其他成员卡片 - 已添加链接并保持对齐 -->
       <div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/szf.jpg" alt="孙志繁" class="member-photo">
-    <h3 class="member-name">Zhifan Sun</h3>
-    <p class="member-role">Graduate student</p>
-    <p class="member-bio">Zhifan Sun is a third-year graduate student.</p>
-</div>
-<div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/zy.jpg" alt="赵颖" class="member-photo">
-    <h3 class="member-name">Zhao Ying</h3>
-    <h3 class="member-role">Graduate student</h3>
-    <p class="member-bio">Zhao Ying is a third-year graduate student.</p>
-</div>
-<div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/wzj.jpg" alt="吴泽钧" class="member-photo">
-    <h3 class="member-name">Zejun Wu</h3>
-    <p class="member-role">Graduate student</p>
-    <p class="member-bio">Zejun Wu is a second-year graduate student.</p>
-</div>
-<div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/oyh2.jpg" alt="区逸华" class="member-photo">
-    <h3 class="member-name">Yihua Ou</h3>
-    <p class="member-role">Graduate student</p>
-    <p class="member-bio">Yihua Ou is a second-year graduate student.</p>
-</div>
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/szf.jpg" alt="孙志繁" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Zhifan Sun</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Zhifan Sun is a third-year graduate student.</p>
+      </div>
+      
       <div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/lyw2.png" alt="刘耀蔚" class="member-photo">
-    <h3 class="member-name">Yaowei Liu</h3>
-    <p class="member-role">Graduate student</p>
-    <p class="member-bio">Yaowei Liu is a second-year graduate student.</p>
-</div>
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/zy.jpg" alt="赵颖" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Zhao Ying</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Zhao Ying is a third-year graduate student.</p>
+      </div>
+      
       <div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/hxb.jpg" alt="黄学斌" class="member-photo">
-    <h3 class="member-name">Xuebin Huang</h3>
-    <p class="member-role">Graduate student</p>
-    <p class="member-bio">Xuebin Huang is a first-year graduate student.</p>
-</div> 
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/wzj.jpg" alt="吴泽钧" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Zejun Wu</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Zejun Wu is a second-year graduate student.</p>
+      </div>
+      
       <div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/zq.jpg" alt="郑倩" class="member-photo">
-    <h3 class="member-name">Zheng Qian</h3>
-    <p class="member-role">Graduate student</p>
-    <p class="member-bio">Zheng Qian is a first-year graduate student.</p>
-</div>
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/oyh2.jpg" alt="区逸华" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Yihua Ou</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Yihua Ou is a second-year graduate student.</p>
+      </div>
+      
       <div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/lzx.jpg" alt="李子昕" class="member-photo">
-    <h3 class="member-name">Zixin Li</h3>
-    <p class="member-role">Graduate student</p>
-    <p class="member-bio">Zixin Li is a first-year graduate student.</p>
-    </div>
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/lyw2.png" alt="刘耀蔚" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Yaowei Liu</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Yaowei Liu is a second-year graduate student.</p>
+      </div>
+      
       <div class="team-member">
-    <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/zyk.jpg" alt="曾宇康" class="member-photo">
-    <h3 class="member-name">Yukang Zeng</h3>
-    <p class="member-role">Graduate student</p>
-    <p class="member-bio">Yukang Zeng is a first-year graduate student.</p>
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/hxb.jpg" alt="黄学斌" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Xuebin Huang</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Xuebin Huang is a first-year graduate student.</p>
+      </div>
+      
+      <div class="team-member">
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/zq.jpg" alt="郑倩" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Zheng Qian</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Zheng Qian is a first-year graduate student.</p>
+      </div>
+      
+      <div class="team-member">
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/lzx.jpg" alt="李子昕" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Zixin Li</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Zixin Li is a first-year graduate student.</p>
+      </div>
+      
+      <div class="team-member">
+        <img src="https://raw.githubusercontent.com/HMLuanLab/LuanLab/refs/heads/main/images/zyk.jpg" alt="曾宇康" class="member-photo">
+        <h3 class="member-name"><a href="https://www.baidu.com" target="_blank">Yukang Zeng</a></h3>
+        <p class="member-role">Graduate student</p>
+        <p class="member-bio">Yukang Zeng is a first-year graduate student.</p>
+      </div>
     </div>
   </div>
 </section>
