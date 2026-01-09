@@ -385,128 +385,105 @@
           color: white;
         }
         
-    <style>
-/* 团队部分基础样式 */
-.team {
-  padding: 60px 0;
-  background-color: #f8f9fa;
-}
+       /* 团队成员部分 */
 
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5rem;
-  color: #333;
-}
+          .team {
 
-/* 网格布局确保卡片对齐 */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+            background-color: white;
 
-/* 卡片统一样式 */
-.team-member {
-  background: #fff;
-  border-radius: 15px;
-  padding: 25px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-}
+          }
 
-/* 卡片悬停效果 */
-.team-member:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+        
 
-/* 成员头像样式 */
-.member-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #e9ecef;
-  margin-bottom: 20px;
-}
+        .team-grid {
 
-/* 成员名字样式 - 统一链接样式 */
-.member-name {
-  margin-bottom: 10px;
-  font-size: 1.4rem;
-  color: #333;
-}
+          display: grid;
 
-.member-name a {
-  color: #2c3e50;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
-.member-name a:hover {
-  color: #c74385;
-  text-decoration: underline;
-}
+          gap: 30px;
 
-/* 成员角色样式 */
-.member-role {
-  color: #c74385;
-  font-weight: 600;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
+        }
 
-/* 成员简介样式 */
-.member-bio {
-  color: #666;
-  line-height: 1.6;
-  font-size: 0.9rem;
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-}
+        
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .team-member {
-    padding: 20px;
-  }
-  
-  .member-photo {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .member-name {
-    font-size: 1.2rem;
-  }
-}
+        .team-member {
 
-@media (max-width: 480px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-}
-</style>
+          text-align: center;
+
+          background-color: var(--light);
+
+          border-radius: 10px;
+
+          padding: 30px 20px;
+
+          transition: all 0.3s;
+
+        }
+
+        
+
+        .team-member:hover {
+
+          transform: translateY(-5px);
+
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+        }
+
+        
+
+        .member-photo {
+
+          width: 150px;
+
+          height: 150px;
+
+          border-radius: 50%;
+
+          object-fit: cover;
+
+          margin: 0 auto 20px;
+
+          border: 5px solid var(--secondary);
+
+        }
+
+        
+
+        .member-name {
+
+          font-size: 20px;
+
+          margin-bottom: 5px;
+
+          color: var(--primary);
+
+        }
+
+        
+
+        .member-role {
+
+          color: var(--secondary);
+
+          font-weight: 600;
+
+          margin-bottom: 15px;
+
+        }
+
+        
+
+        .member-bio {
+
+          color: #666;
+
+            font-size: 14px;
+
+          line-height: 1.5;
+
+        }
         
         /* 页脚 */
           footer {
